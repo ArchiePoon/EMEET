@@ -9,7 +9,8 @@ time.sleep(5)
 
 # 定位窗口
 wc = uiautomation.WindowControl(searchDepth=1, Name="eMeetLink")
-
+#ASDASDDSADASDASDASD
+#测试
 
 class Test_emeetlink_login:
     def test_emeetlin_login(self):
