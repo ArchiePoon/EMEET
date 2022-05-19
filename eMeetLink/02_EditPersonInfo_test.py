@@ -15,15 +15,17 @@ windows_control = uiautomation.WindowControl(searchDepth=1, Name="eMeetLink")
 # windows_control.SetTopmost(True)
 class Test_PersonInfo:
     def test_EditPersonName(self):
+        # 点击进入个人信息页面
         windows_control.RadioButtonControl(searchDepth=4,AutomationId="eMeetLinkClass.centralWidget.widget_menu_bar.btn_personal",ClassName="QPushButton").Click()
-
+        #点击修改按钮
         windows_control.ButtonControl(searchDepth=14,ClassName="QPushButton",AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.widget_0.widget_.widget_nickname.btnChangeNick").Click()
-#清除个人信息中用户名称
-        windows_control.EditControl(searchDepth=6,ClassName="QLineEdit",AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.EMUpdateUserNicknameDlg.widget.widget_input.widget_2.lineEditNickname").SendKeys("Back")
+        #清除个人信息中用户名称,先全选编辑框中的内容，然后再Back
+        windows_control.EditControl(searchDepth=6,ClassName="QLineEdit",AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.EMUpdateUserNicknameDlg.widget.widget_input.widget_2.lineEditNickname").SendKeys("{Ctrl}a")
+        windows_control.EditControl(searchDepth=6,ClassName="QLineEdit",AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.EMUpdateUserNicknameDlg.widget.widget_input.widget_2.lineEditNickname").SendKeys("{Back}")
         time.sleep(3)
         windows_control.EditControl(searchDepth=6, ClassName="QLineEdit",
                                     AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.EMUpdateUserNicknameDlg.widget.widget_input.widget_2.lineEditNickname").SendKeys(
-            "咕咕鸡+%s"%nowtime)
+            "咕咕鸡%s"%nowtime)
         windows_control.ButtonControl(searchDepth=5, ClassName="QPushButton",
                                       AutomationId="eMeetLinkClass.centralWidget.widget.widget_client.mainStackedWidget.page_personal.stackedWidget.page_personal.stackedWidget_2.page_info.EMUpdateUserNicknameDlg.widget.widget_btn.btn_confirm").Click()
 
