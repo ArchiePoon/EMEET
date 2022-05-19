@@ -1,5 +1,4 @@
 import uiautomation
-import os
 import subprocess
 import time
 import pytest
