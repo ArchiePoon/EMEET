@@ -1,3 +1,5 @@
 [
-  "01_login_test.py::Test_emeetlink_login::test_emeetlin_login"
+  "01_login_test.py::Test_emeetlink_login::test_cloes_windows",
+  "01_login_test.py::Test_emeetlink_login::test_emeetlin_login",
+  "02_EditPersonInfo_test.py::Test_PersonInfo::test_EditPersonName"
 ]
